@@ -39,7 +39,6 @@ export const ImageContainer = styled.div`
 export const TextContent = styled.div`
   position: relative;
   max-width: 400px;
-  z-index: 2;
 `;
 
 
