@@ -15,6 +15,10 @@ export const HeroContainer = styled.section`
   position: relative;
 
   ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.laptop}) {
+      padding-left: 2rem;
+      min-height: 450px;
+    }
     @media (max-width: ${theme.breakpoints.tablet}) {
       padding: 1rem;
       min-height: 400px;
