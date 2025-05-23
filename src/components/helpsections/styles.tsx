@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
+// TODO: All text needs rensponsive resizing 
 export const HelpSectionWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 4.375rem 2rem 5.625rem;
   gap: 3rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -34,6 +35,13 @@ export const ImageContainer = styled.div`
     width: 200px;
     height: 250px;
   }
+`;
+
+export const SubHeading = styled.h2`
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+  padding-top: 4.375rem;
 `;
 
 export const TextContent = styled.div`
