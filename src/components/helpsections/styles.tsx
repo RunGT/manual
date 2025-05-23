@@ -42,20 +42,27 @@ export const TextContent = styled.div`
   z-index: 2;
 `;
 
+
 export const NumberOverlay = styled.span`
   position: absolute;
-  font-size: 8rem;
-  font-weight: 600;
-  color: rgba(9, 57, 49, 0.05);
-  top: -2.5rem;
-  left: -2rem;
+  font-size: 28.125rem; /* 450px */
+  font-weight: 400;
+  color: #f3f7f4; 
+  top: -148px;
+  left: -90px;
+  line-height: 1;
+  z-index: -10;
   pointer-events: none;
   user-select: none;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    font-size: 15rem;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    font-size: 5rem;
-    top: -1.5rem;
-    left: 0;
+    font-size: 10rem;
+    left: 1rem;
+    top: 0.5rem;
   }
 `;
 

@@ -14,6 +14,7 @@ export default function HairLoss() {
   return (
     <HelpSectionWrapper>
       <ImageContainer>
+        {/* TODO: Image should sit above the number */}
         <Image
           src="/images/landing/hairloss.png"
           alt="Back of head with hair loss"
@@ -22,11 +23,13 @@ export default function HairLoss() {
         />
       </ImageContainer>
       <TextContent>
+        {/* TODO: Change font to match the design */}
         <NumberOverlay>01</NumberOverlay>
         <Label>Hair Loss</Label>
         <Heading>Hair loss needn&apos;t be irreversible. We can help!</Heading>
         <BodyCopy>
-          We&apos;re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.
+          We&apos;re working around the clock to bring you a holistic approach
+          to your wellness. From top to bottom, inside and out.
         </BodyCopy>
       </TextContent>
     </HelpSectionWrapper>
