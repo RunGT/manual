@@ -1,3 +1,4 @@
+import HairLoss from "@/components/helpsections/HairLoss";
 import LandingHero from "@/components/LandingHero";
 import Head from "next/head";
 
@@ -9,6 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LandingHero />
+      <HairLoss />
     </>
   );
 }
