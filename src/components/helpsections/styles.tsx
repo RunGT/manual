@@ -14,11 +14,25 @@ export const HelpSectionWrapper = styled.section`
 `;
 
 export const ImageContainer = styled.div`
+  position: relative;
+  width: 370px;
+  height: 445px;
   flex-shrink: 0;
   z-index: 2;
 
-  img {
-    display: block;
+  @media (max-width: ${({ theme }) => theme.breakpoints.laptop}) {
+    width: 300px;
+    height: 360px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    width: 250px;
+    height: 300px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 200px;
+    height: 250px;
   }
 `;
 
