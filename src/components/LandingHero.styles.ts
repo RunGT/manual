@@ -3,14 +3,16 @@ import styled, { css } from "styled-components";
 export const HeroContainer = styled.section`
   width: 100%;
   max-height: 900px;
-  min-height: 700px;
+  min-height: 750px;
   background-image: url("/images/landing/BG.png");
   background-size: cover;
   background-position: right center;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: 2rem;
+  padding-left: 8.625rem;
+  flex-direction: column;
+  position: relative;
 
   ${({ theme }) => css`
     @media (max-width: ${theme.breakpoints.tablet}) {
@@ -29,13 +31,23 @@ export const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 500px;
-  gap: 1.5rem;
+  max-width: 468px;
+`;
+
+export const LogoWrapper = styled.div`
+  position: absolute;
+  top: 2rem;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      top: 1rem;
+      left: 1rem;
+    }
+  `}
 `;
 
 export const Logo = styled.img`
-  width: 32px;
-  height: auto;
+  /* TODO: Change size for responsive design */
 `;
 
 export const HeroHeading = styled.h1`
@@ -43,6 +55,7 @@ export const HeroHeading = styled.h1`
   line-height: 1.2;
   font-weight: 700;
   color: #093931;
+  padding-bottom: 1.25rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 2.25rem;
@@ -53,6 +66,7 @@ export const HeroSubheading = styled.p`
   font-size: 1.125rem;
   line-height: 1.6;
   color: #093931cc;
+  padding-bottom: 2.25rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 1rem;

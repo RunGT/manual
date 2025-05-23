@@ -6,12 +6,15 @@ import {
   HeroHeading,
   HeroSubheading,
   Logo,
+  LogoWrapper,
 } from "./LandingHero.styles";
 
 export default function LandingHero() {
   return (
     <HeroContainer role="banner" aria-label="Landing hero section">
-      <Logo src="/logos/manual/symbol.svg" alt="Manual logo" />
+      <LogoWrapper>
+        <Logo src="/logos/manual/symbol.svg" alt="Manual logo" />
+      </LogoWrapper>
       <HeroContent>
         <HeroHeading>
           Be good
