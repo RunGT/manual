@@ -1,3 +1,4 @@
+import ErecetileDysfunctionSection from "@/components/helpsections/ErecetileDysfunctionSection";
 import HairLoss from "@/components/helpsections/HairLoss";
 import LandingHero from "@/components/LandingHero";
 import Head from "next/head";
@@ -11,6 +12,7 @@ export default function Home() {
       </Head>
       <LandingHero />
       <HairLoss />
+      <ErecetileDysfunctionSection />
     </>
   );
 }

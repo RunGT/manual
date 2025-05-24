@@ -50,13 +50,13 @@ export const TextContent = styled.div`
 `;
 
 
-export const NumberOverlay = styled.span`
+export const NumberOverlay = styled.span<{ $left?: string }>`
   position: absolute;
   font-size: 28.125rem; /* 450px */
   font-weight: 400;
-  color: #f3f7f4; 
+  color: #f3f7f4;
   top: -148px;
-  left: -90px;
+  left: ${(props) => props.$left || "-90px"};
   line-height: 1;
   z-index: -10;
   pointer-events: none;
