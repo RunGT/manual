@@ -11,13 +11,11 @@ import {
   FooterDivider,
   FooterNote,
   SocialIcons,
-  SocialIcon
+  SocialIcon,
 } from "./Footer.styles";
 
 export default function Footer() {
   return (
-
-    // TODO: Responsive text sizing also, stack and center element when on mobile and relevant breakpoints
     <FooterWrapper>
       <FooterTop>
         <FooterLogo src="/logos/manual/symbol.svg" alt="Manual logo" />
@@ -45,17 +43,38 @@ export default function Footer() {
           <FooterColumn>
             <FooterHeading>Follow Us</FooterHeading>
             <SocialIcons>
-              <SocialIcon src="/logos/brand/facebook.svg" alt="Facebook" />
-              <SocialIcon src="/logos/brand/google.svg" alt="Google" />
-              <SocialIcon src="/logos/brand/twitter.svg" alt="Twitter" />
+              <a
+                href="https://www.facebook.com/MenofManual"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Manual on Facebook"
+              >
+                <SocialIcon src="/logos/brand/facebook.svg" alt="Facebook" />
+              </a>
+
+              <a
+                href="https://www.google.com/search?q=manual+health"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Manual's Google placeholder"
+              >
+                <SocialIcon src="/logos/brand/google.svg" alt="Google" />
+              </a>
+              <a
+                href="https://twitter.com/MenofManual"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Manual on Twitter"
+              >
+                <SocialIcon src="/logos/brand/twitter.svg" alt="Twitter" />
+              </a>
             </SocialIcons>
           </FooterColumn>
         </FooterColumns>
       </FooterTop>
       <FooterDivider />
       <FooterBottom>
-        <FooterNote>© 2021 Manual. All rights reserved
-        </FooterNote>
+        <FooterNote>© 2021 Manual. All rights reserved</FooterNote>
       </FooterBottom>
     </FooterWrapper>
   );
