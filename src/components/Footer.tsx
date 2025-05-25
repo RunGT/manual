@@ -15,6 +15,25 @@ import {
 } from "./Footer.styles";
 
 export default function Footer() {
+
+  const socialLinks = [
+    {
+      name: "Facebook",
+      href: "https://www.facebook.com/MenofManual",
+      icon: "/logos/brand/facebook.svg",
+    },
+    {
+      name: "Google",
+      href: "https://www.google.com/search?q=manual+health",
+      icon: "/logos/brand/google.svg",
+    },
+    {
+      name: "Twitter",
+      href: "https://twitter.com/MenofManual",
+      icon: "/logos/brand/twitter.svg",
+    },
+  ];
+
   return (
     <FooterWrapper>
       <FooterTop>
@@ -43,31 +62,17 @@ export default function Footer() {
           <FooterColumn>
             <FooterHeading>Follow Us</FooterHeading>
             <SocialIcons>
-              <a
-                href="https://www.facebook.com/MenofManual"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Manual on Facebook"
-              >
-                <SocialIcon src="/logos/brand/facebook.svg" alt="Facebook" />
-              </a>
-
-              <a
-                href="https://www.google.com/search?q=manual+health"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Manual's Google placeholder"
-              >
-                <SocialIcon src="/logos/brand/google.svg" alt="Google" />
-              </a>
-              <a
-                href="https://twitter.com/MenofManual"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Manual on Twitter"
-              >
-                <SocialIcon src="/logos/brand/twitter.svg" alt="Twitter" />
-              </a>
+              {socialLinks.map(({ name, href, icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit Manual on ${name}`}
+                >
+                  <SocialIcon src={icon} alt={`${name} icon`} />
+                </a>
+              ))}
             </SocialIcons>
           </FooterColumn>
         </FooterColumns>
