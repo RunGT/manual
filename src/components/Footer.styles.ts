@@ -23,12 +23,26 @@ export const FooterTop = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      flex-direction: column;
+      align-items: center;
+    }
+  `}
 `;
 
 export const FooterLogo = styled.img`
   width: 75px;
   height: 75px;
   flex-shrink: 0;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      width: 40px;
+      height: 40px;
+    }
+  `}
 `;
 
 export const FooterColumns = styled.div`
@@ -39,6 +53,8 @@ export const FooterColumns = styled.div`
   ${({ theme }) => css`
     @media (max-width: ${theme.breakpoints.tablet}) {
       flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 2rem;
     }
   `}
@@ -49,6 +65,12 @@ export const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      align-items: center;
+    }
+  `}
 `;
 
 export const FooterHeading = styled.h4`
@@ -73,6 +95,13 @@ export const SocialIcons = styled.div`
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: flex-start;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      justify-content: center;
+    }
+  `}
 `;
 
 export const SocialIcon = styled.img`
