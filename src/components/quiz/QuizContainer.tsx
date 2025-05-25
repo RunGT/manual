@@ -1,6 +1,8 @@
+// TODO: Make quiz go full screen, currently you can scroll down and see the other ElementInternals. Maybe conditionally render element on the home route
+
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import QuestionStep from "./QuestionStep"
+import QuestionStep from "./QuestionStep";
 import ResultStep from "./ResultStep";
 import { Question, QuestionOption } from "@/types/quiz";
 
@@ -13,21 +15,18 @@ export default function QuizContainer() {
   const [isRejected, setIsRejected] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
 
-
-
   useEffect(() => {
-  const fetchQuiz = async () => {
-    try {
-      const res = await fetch(API_URL);
-      const data = await res.json();
-      setQuestions(data.questions);
-    } catch (err) {
-      console.error("Failed to fetch quiz", err);
-    }
-  };
-  fetchQuiz();
-}, []);
-
+    const fetchQuiz = async () => {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        setQuestions(data.questions);
+      } catch (err) {
+        console.error("Failed to fetch quiz", err);
+      }
+    };
+    fetchQuiz();
+  }, []);
 
   const handleAnswer = (answer: QuestionOption) => {
     const nextAnswers = [...answers, answer];
@@ -38,14 +37,14 @@ export default function QuizContainer() {
     } else if (currentStep + 1 >= questions.length) {
       setIsComplete(true);
     } else {
-      setCurrentStep(prev => prev + 1);
+      setCurrentStep((prev) => prev + 1);
     }
   };
 
   const goBack = () => {
     if (currentStep > 0) {
-      setCurrentStep(prev => prev - 1);
-      setAnswers(prev => prev.slice(0, -1));
+      setCurrentStep((prev) => prev - 1);
+      setAnswers((prev) => prev.slice(0, -1));
     }
   };
 
