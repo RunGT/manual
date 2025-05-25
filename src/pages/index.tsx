@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import ErecetileDysfunctionSection from "@/components/helpsections/ErecetileDysfunctionSection";
 import HairLoss from "@/components/helpsections/HairLoss";
 import LandingHero from "@/components/LandingHero";
@@ -13,6 +14,7 @@ export default function Home() {
       <LandingHero />
       <HairLoss />
       <ErecetileDysfunctionSection />
+      <Footer />
     </>
   );
 }

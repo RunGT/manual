@@ -1,0 +1,109 @@
+import styled, { css } from "styled-components";
+
+export const FooterWrapper = styled.footer`
+  background-color: #e8efe9;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      padding: 3rem 1.5rem 1rem;
+    }
+  `}
+`;
+
+export const FooterTop = styled.div`
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+`;
+
+export const FooterLogo = styled.img`
+  width: 75px;
+  height: 75px;
+  flex-shrink: 0;
+`;
+
+export const FooterColumns = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  `}
+`;
+
+export const FooterColumn = styled.div`
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
+
+export const FooterHeading = styled.h4`
+  font-size: 0.625rem;
+  color: #093931;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+`;
+
+export const FooterLink = styled.a`
+  font-size: 0.75rem;
+  color: #093931cc;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #093931;
+  }
+`;
+
+export const SocialIcons = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`;
+
+export const SocialIcon = styled.img`
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+`;
+
+export const FooterDivider = styled.hr`
+  width: 100%;
+  max-width: 1164px;
+  height: 1px;
+  background-color: rgba(9, 57, 49, 0.1);
+  border: none;
+`;
+
+export const FooterBottom = styled.div`
+  width: 100%;
+  max-width: 1164px;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+`;
+
+export const FooterNote = styled.p`
+  font-size: 0.625rem;
+  color: #09393199;
+  text-align: center;
+`;
