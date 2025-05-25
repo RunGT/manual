@@ -110,6 +110,15 @@ export const SocialIcon = styled.img`
   cursor: pointer;
   transition: opacity 0.3s ease;
 
+  a:visited & {
+    opacity: 1;
+  }
+
+  a:focus &,
+  a:active & {
+    opacity: 1;
+  }
+
   &:hover {
     opacity: 0.75;
   }
