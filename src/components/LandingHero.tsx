@@ -9,7 +9,11 @@ import {
   LogoWrapper,
 } from "./LandingHero.styles";
 
-export default function LandingHero() {
+type Props = {
+  onStartQuiz: () => void;
+};
+
+export default function LandingHero({ onStartQuiz }: Props) {
   return (
     <HeroContainer role="banner" aria-label="Landing hero section">
       <LogoWrapper>
@@ -25,7 +29,7 @@ export default function LandingHero() {
           We&apos;re working around the clock to bring you a holistic approach
           to your wellness. From top to bottom, inside and out.
         </HeroSubheading>
-        <CTAButton>Take the quiz</CTAButton>
+        <CTAButton onClick={onStartQuiz}>Take the quiz</CTAButton>
       </HeroContent>
     </HeroContainer>
   );
