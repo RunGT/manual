@@ -9,8 +9,9 @@ const API_URL = "/api/quiz";
 
 export default function QuizContainer() {
   const [questions, setQuestions] = useState<Question[]>([]);
+  // Tracks user answers; one slot per question, initialised as null
+  const [answers, setAnswers] = useState<(QuestionOption | null)[]>([]);
   const [currentStep, setCurrentStep] = useState(0);
-  const [answers, setAnswers] = useState<QuestionOption[]>([]);
   const [isRejected, setIsRejected] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
 
@@ -20,6 +21,8 @@ export default function QuizContainer() {
         const res = await fetch(API_URL);
         const data = await res.json();
         setQuestions(data.questions);
+        // Fill answer slots with nulls for tracking progress and revisits
+        setAnswers(Array(data.questions.length).fill(null));
       } catch (err) {
         console.error("Failed to fetch quiz", err);
       }
@@ -28,38 +31,42 @@ export default function QuizContainer() {
   }, []);
 
   const router = useRouter();
-  const { pathname } = router;
-  const isQuizRoute = pathname === "/quiz";
+  const isQuizRoute = router.pathname === "/quiz";
 
   const handleAnswer = (answer: QuestionOption) => {
-    // Replace or append at the current index
-    const newAnswers = answers.slice(0, currentStep);
-    newAnswers[currentStep] = answer;
-    setAnswers(newAnswers);
+    // Save the selected answer for the current question
+    const updatedAnswers = [...answers];
+    updatedAnswers[currentStep] = answer;
+    setAnswers(updatedAnswers);
 
+    // If the answer is a rejection, mark quiz as complete
     if (answer.isRejection) {
       setIsRejected(true);
       setIsComplete(true);
+      return;
+    }
+
+    setIsRejected(false);
+
+    // If this was the last question, mark quiz as complete
+    if (currentStep + 1 >= questions.length) {
+      setIsComplete(true);
     } else {
-      setIsRejected(false);
-      if (currentStep + 1 >= questions.length) {
-        setIsComplete(true);
-      } else {
-        setCurrentStep((prev) => prev + 1);
-      }
+      // Otherwise, move to the next question
+      setCurrentStep((prev) => prev + 1);
     }
   };
 
   const goBack = () => {
     if (isComplete) {
-      // 1st Back click from Result → un-complete, land on last question
+      // Going back from results: reset to last question
       setIsComplete(false);
       setIsRejected(false);
       return;
     }
+
     if (currentStep > 0) {
-      // subsequent back clicks → step backward, drop last answer
-      setAnswers((prev) => prev.slice(0, prev.length - 1));
+      // Move back one question without clearing the previous answer
       setCurrentStep((prev) => prev - 1);
       setIsRejected(false);
     }
@@ -84,6 +91,7 @@ export default function QuizContainer() {
           question={questions[currentStep]}
           onAnswer={handleAnswer}
           onBack={goBack}
+          // Restore previous selection if available
           selected={answers[currentStep]?.value}
         />
       )}
