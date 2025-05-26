@@ -12,10 +12,10 @@ import {
 } from "./QuestionStep.styles";
 
 function parseOptionDisplay(display: string) {
-  const altMatch = display.match(/alt="([^\"]+)"/);
-  const srcMatch = display.match(/src="([^\"]+)"/);
+  const altMatch = display.match(/alt="([^"]+)"/);
+  const srcMatch = display.match(/src="([^"]+)"/);
   return {
-    alt: altMatch?.[1] ?? display, // Fallback to display for plain text like "Yes"
+    label: altMatch?.[1] ?? display, // Fallback to display plain text responses "Yes/No"
     src: srcMatch?.[1] ?? "",
   };
 }
@@ -46,7 +46,7 @@ export default function QuestionStep({
 
       <OptionsGrid>
         {question.options.map((opt) => {
-          const { alt, src } = parseOptionDisplay(opt.display);
+          const { label, src } = parseOptionDisplay(opt.display);
           const isSelected = selected === opt.value;
 
           return (
@@ -55,7 +55,7 @@ export default function QuestionStep({
               onClick={() => onAnswer(opt)}
               className={isSelected ? "selected" : ""}
             >
-              {src ? <img src={src} alt={alt} /> : <span>{alt}</span>}
+              {src ? <img src={src} alt={label} /> : <span>{label}</span>}
             </OptionButton>
           );
         })}
