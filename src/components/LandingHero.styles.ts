@@ -70,7 +70,7 @@ export const HeroHeading = styled.h1`
   font-size: 3rem;
   line-height: 1.2;
   font-weight: 700;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.textDark};
   padding-bottom: 1.25rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -86,7 +86,7 @@ export const HeroHeading = styled.h1`
 export const HeroSubheading = styled.p`
   font-size: 1.125rem;
   line-height: 1.6;
-  color: #093931cc;
+  color: ${({ theme }) => theme.colors.textDark};
   padding-bottom: 2.25rem;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
@@ -102,7 +102,7 @@ export const HeroSubheading = styled.p`
 
 export const CTAButton = styled.button`
   padding: 0.75rem 1.5rem;
-  background-color: #811c26;
+  background-color: ${({ theme }) => theme.colors.buttonPrimary};
   color: #fff;
   font-size: 0.875rem;
   font-weight: bold;
@@ -112,6 +112,6 @@ export const CTAButton = styled.button`
   transition: background 0.3s ease;
 
   &:hover {
-    background-color: #6a141d;
+    background-color: ${({ theme }) => theme.colors.buttonHover};
   }
 `;

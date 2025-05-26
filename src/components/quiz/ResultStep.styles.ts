@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: white;
-  color: #0b3b3c;
+  color: ${({ theme }) => theme.colors.textDark};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +21,7 @@ export const ResultText = styled.h2`
 `;
 
 export const ResultLink = styled.a`
-  color: #0b3b3c;
+  color: ${({ theme }) => theme.colors.textDark};
   text-decoration: underline;
   font-weight: bold;
 

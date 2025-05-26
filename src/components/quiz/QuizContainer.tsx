@@ -103,7 +103,7 @@ const FullScreen = styled.div`
   width: 100vw;
   height: 100vh;
   background: white;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.primary};
   display: flex;
   justify-content: center;
   align-items: center;

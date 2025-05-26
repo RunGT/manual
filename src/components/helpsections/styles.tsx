@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-// TODO: All text needs rensponsive resizing 
 export const HelpSectionWrapper = styled.section`
   display: flex;
   align-items: center;
@@ -42,7 +41,7 @@ export const SubHeading = styled.h2`
   justify-content: center;
   font-size: 2.5rem;
   padding-top: 4.375rem;
-  color: #0b3b3c;
+  color: ${({ theme }) => theme.colors.textDark};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 2rem;
@@ -64,7 +63,7 @@ export const NumberOverlay = styled.span<{ $left?: string }>`
   position: absolute;
   font-size: 28.125rem; /* 450px */
   font-weight: 400;
-  color: #f3f7f4;
+  color: ${({ theme }) => theme.colors.backgroundMuted};
   top: -148px;
   left: ${(props) => props.$left || "-90px"};
   line-height: 1;
@@ -87,18 +86,18 @@ export const Label = styled.span`
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #6d8a83;
+  color: ${({ theme }) => theme.colors.textMuted};
 `;
 
 export const Heading = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.primary};
   padding: 0.5rem 0;
 `;
 
 export const BodyCopy = styled.p`
   font-size: 0.875rem;
-  color: #0b3b3c;
+  color: ${({ theme }) => theme.colors.textDark};
   line-height: 1.6;
 `;

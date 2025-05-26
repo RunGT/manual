@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const FooterWrapper = styled.footer`
-  background-color: #e8efe9;
+  background-color: ${({ theme }) => theme.colors.footerBackground};
   padding: 4rem 2rem 2rem;
   display: flex;
   flex-direction: column;
@@ -75,19 +75,19 @@ export const FooterColumn = styled.div`
 
 export const FooterHeading = styled.h4`
   font-size: 0.625rem;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 `;
 
 export const FooterLink = styled.a`
   font-size: 0.75rem;
-  color: #093931cc;
+  color: ${({ theme }) => theme.colors.primaryLight};
   text-decoration: none;
   transition: color 0.3s;
 
   &:hover {
-    color: #093931;
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 
@@ -128,7 +128,7 @@ export const FooterDivider = styled.hr`
   width: 100%;
   max-width: 1164px;
   height: 1px;
-  background-color: rgba(9, 57, 49, 0.1);
+  background-color: ${({ theme }) => theme.colors.borderLight};
   border: none;
 `;
 

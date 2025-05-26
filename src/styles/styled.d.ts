@@ -8,5 +8,19 @@ declare module 'styled-components' {
       laptop: string;
       desktop: string;
     };
+    colors: {
+      primary: string;
+      primaryLight: string;
+      textDark: string;
+      textMuted: string;
+      background: string;
+      backgroundMuted: string;
+      footerBackground: string;
+      link: string;
+      linkHover: string;
+      buttonPrimary: string;
+      buttonHover: string;
+      borderLight: string;
+    };
   }
 }

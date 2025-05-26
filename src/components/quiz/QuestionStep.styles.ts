@@ -20,12 +20,12 @@ export const StepInfo = styled.div`
 export const Step = styled.h2`
   font-size: 1.25rem;
   font-weight: 600;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const QuestionText = styled.p`
   font-size: 1rem;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const OptionsGrid = styled.div`
@@ -44,7 +44,7 @@ export const OptionButton = styled.button`
   max-width: 140px;
   border-radius: 6px;
   transition: border-color 0.3s ease;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 1rem;
   text-align: center;
   display: flex;
@@ -64,11 +64,11 @@ export const OptionButton = styled.button`
   }
 
   &:hover {
-    border-color: #093931;
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   &.selected {
-    border-color: #093931;
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -79,7 +79,7 @@ export const OptionButton = styled.button`
 export const BackButton = styled.button`
   background: none;
   border: none;
-  color: #093931;
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: underline;
   cursor: pointer;
   font-size: 0.875rem;
