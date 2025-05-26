@@ -41,6 +41,7 @@ export default function Footer() {
         <FooterColumns>
           <FooterColumn>
             <FooterHeading>Product</FooterHeading>
+            {/* In a fully scoped site footer the links below would route to the relevant pages. Home is used as a place holder*/}
             <FooterLink href="#">Popular</FooterLink>
             <FooterLink href="#">Trending</FooterLink>
             <FooterLink href="#">Guided</FooterLink>
