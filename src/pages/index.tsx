@@ -17,11 +17,13 @@ export default function Home() {
       {quizStarted ? (
         <QuizContainer />
       ) : (
-        <LandingHero onStartQuiz={() => setQuizStarted(true)} />
+        <>
+          <LandingHero onStartQuiz={() => setQuizStarted(true)} />
+          <HairLoss />
+          <ErecetileDysfunctionSection />
+          <Footer />
+        </>
       )}
-      <HairLoss />
-      <ErecetileDysfunctionSection />
-      <Footer />
     </>
   );
 }
