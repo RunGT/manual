@@ -1,11 +1,13 @@
 import React from "react";
 import { Container, ResultLink, ResultText } from "./ResultStep.styles";
+import { styled } from "styled-components";
 
 type Props = {
   rejected: boolean;
+  onBack: () => void;
 };
 
-export default function ResultStep({ rejected }: Props) {
+export default function ResultStep({ rejected, onBack }: Props) {
   return (
     <Container>
       <ResultText>
@@ -27,6 +29,21 @@ export default function ResultStep({ rejected }: Props) {
           </>
         )}
       </ResultText>
+      <BackButton onClick={onBack}>Back to questions</BackButton>
     </Container>
   );
 }
+
+const BackButton = styled.button`
+  background: none;
+  border: none;
+  color: #093931;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+`;

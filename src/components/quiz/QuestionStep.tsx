@@ -1,4 +1,5 @@
-// TODO: Fix the question selection on the next step being highlighted when moving onto the next yes/no question it should stay highlighted when you move back to the previous question. Change image sizing for mobile and relevant breakpoints. Add manual logo for a home button to allow the user to exit the quiz at any time.
+// // TODO: Fix the question selection on the next step being highlighted when moving onto the next yes/no question it should stay highlighted when you move back to the previous question. Change image sizing for mobile and relevant breakpoints. 
+
 import React from "react";
 import { Question, QuestionOption } from "../../types/quiz";
 import {
@@ -48,7 +49,7 @@ export default function QuestionStep({
         {question.options.map((opt) => {
           const { label, src } = parseOptionDisplay(opt.display);
           const isSelected = selected === opt.value;
-
+          
           return (
             <OptionButton
               key={String(opt.value)}

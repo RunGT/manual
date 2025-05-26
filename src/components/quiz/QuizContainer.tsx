@@ -29,26 +29,39 @@ export default function QuizContainer() {
 
   const router = useRouter();
   const { pathname } = router;
-
   const isQuizRoute = pathname === "/quiz";
 
   const handleAnswer = (answer: QuestionOption) => {
-    const nextAnswers = [...answers, answer];
-    setAnswers(nextAnswers);
+    // Replace or append at the current index
+    const newAnswers = answers.slice(0, currentStep);
+    newAnswers[currentStep] = answer;
+    setAnswers(newAnswers);
+
     if (answer.isRejection) {
       setIsRejected(true);
       setIsComplete(true);
-    } else if (currentStep + 1 >= questions.length) {
-      setIsComplete(true);
     } else {
-      setCurrentStep((prev) => prev + 1);
+      setIsRejected(false);
+      if (currentStep + 1 >= questions.length) {
+        setIsComplete(true);
+      } else {
+        setCurrentStep((prev) => prev + 1);
+      }
     }
   };
 
   const goBack = () => {
+    if (isComplete) {
+      // 1st Back click from Result → un-complete, land on last question
+      setIsComplete(false);
+      setIsRejected(false);
+      return;
+    }
     if (currentStep > 0) {
+      // subsequent back clicks → step backward, drop last answer
+      setAnswers((prev) => prev.slice(0, prev.length - 1));
       setCurrentStep((prev) => prev - 1);
-      setAnswers((prev) => prev.slice(0, -1));
+      setIsRejected(false);
     }
   };
 
@@ -63,7 +76,7 @@ export default function QuizContainer() {
       )}
 
       {isComplete ? (
-        <ResultStep rejected={isRejected} />
+        <ResultStep rejected={isRejected} onBack={goBack} />
       ) : (
         <QuestionStep
           step={currentStep + 1}
