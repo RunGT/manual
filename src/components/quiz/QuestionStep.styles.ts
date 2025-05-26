@@ -1,6 +1,6 @@
 
+import { theme } from "@/styles/theme";
 import styled from "styled-components";
-
 
 export const Wrapper = styled.div`
   display: flex;
@@ -69,6 +69,10 @@ export const OptionButton = styled.button`
 
   &.selected {
     border-color: #093931;
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    max-width: 115px;
   }
 `;
 
