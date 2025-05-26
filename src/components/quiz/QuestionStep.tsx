@@ -1,6 +1,3 @@
-// // TODO: Fix the question selection on the next step being highlighted when moving onto the next yes/no question it should stay highlighted when you move back to the previous question. Change image sizing for mobile and relevant breakpoints. 
-
-import React from "react";
 import { Question, QuestionOption } from "../../types/quiz";
 import {
   Wrapper,
@@ -49,10 +46,10 @@ export default function QuestionStep({
         {question.options.map((opt) => {
           const { label, src } = parseOptionDisplay(opt.display);
           const isSelected = selected === opt.value;
-          
+
           return (
             <OptionButton
-              key={String(opt.value)}
+              key={`${step}-${String(opt.value)}`} // Include the question step in the React key so each option is treated as a distinct element across steps
               onClick={() => onAnswer(opt)}
               className={isSelected ? "selected" : ""}
             >
