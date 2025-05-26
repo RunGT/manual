@@ -1,10 +1,9 @@
-// TODO: Make quiz go full screen, currently you can scroll down and see the other ElementInternals. Maybe conditionally render element on the home route
-
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import QuestionStep from "./QuestionStep";
 import ResultStep from "./ResultStep";
 import { Question, QuestionOption } from "@/types/quiz";
+import { useRouter } from "next/router";
 
 const API_URL = "/api/quiz";
 
@@ -27,6 +26,11 @@ export default function QuizContainer() {
     };
     fetchQuiz();
   }, []);
+
+  const router = useRouter();
+  const { pathname } = router;
+
+  const isQuizRoute = pathname === "/quiz";
 
   const handleAnswer = (answer: QuestionOption) => {
     const nextAnswers = [...answers, answer];
@@ -52,6 +56,12 @@ export default function QuizContainer() {
 
   return (
     <FullScreen>
+      {isQuizRoute && !isComplete && (
+        <ExitLogo href="/">
+          <img src="/logos/manual/symbol.svg" alt="Manual home" />
+        </ExitLogo>
+      )}
+
       {isComplete ? (
         <ResultStep rejected={isRejected} />
       ) : (
@@ -77,4 +87,16 @@ const FullScreen = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+`;
+
+const ExitLogo = styled.a`
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
 `;
