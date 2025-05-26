@@ -110,6 +110,7 @@ export const CTAButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
+  font-family: "TT Norms", Arial, Helvetica, sans-serif;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.buttonHover};

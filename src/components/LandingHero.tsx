@@ -28,7 +28,7 @@ export default function LandingHero() {
         </HeroSubheading>
 
         <Link href="/quiz" passHref>
-          <CTAButton>Take the quiz</CTAButton>
+          <CTAButton>TAKE THE QUIZ</CTAButton>
         </Link>
       </HeroContent>
     </HeroContainer>
