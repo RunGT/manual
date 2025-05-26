@@ -65,7 +65,7 @@ export const NumberOverlay = styled.span<{ $left?: string }>`
   font-weight: 400;
   color: ${({ theme }) => theme.colors.backgroundMuted};
   top: -148px;
-  left: ${(props) => props.$left || "-90px"};
+  left: ${(props) => props.$left || "-135px"};
   line-height: 1;
   z-index: -10;
   pointer-events: none;
