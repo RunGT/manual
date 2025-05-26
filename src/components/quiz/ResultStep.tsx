@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, ResultLink, ResultText } from "./ResultStep.styles";
-import { styled } from "styled-components";
+import { BackButton } from "./QuestionStep.styles";
 
 type Props = {
   rejected: boolean;
@@ -33,17 +33,3 @@ export default function ResultStep({ rejected, onBack }: Props) {
     </Container>
   );
 }
-
-const BackButton = styled.button`
-  background: none;
-  border: none;
-  color: #093931;
-  text-decoration: underline;
-  cursor: pointer;
-  font-size: 0.875rem;
-  margin-top: 1.5rem;
-
-  &:hover {
-    text-decoration: none;
-  }
-`;

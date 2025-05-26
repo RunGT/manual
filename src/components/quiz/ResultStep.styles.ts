@@ -17,6 +17,7 @@ export const ResultText = styled.h2`
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 `;
 
 export const ResultLink = styled.a`
