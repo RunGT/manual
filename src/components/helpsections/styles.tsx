@@ -43,6 +43,16 @@ export const SubHeading = styled.h2`
   font-size: 2.5rem;
   padding-top: 4.375rem;
   color: #0b3b3c;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    font-size: 2rem;
+    padding-top: 2.5rem;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.7rem;
+    padding-top: 2rem;
+  }
 `;
 
 export const TextContent = styled.div`

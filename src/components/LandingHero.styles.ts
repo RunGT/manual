@@ -48,10 +48,22 @@ export const LogoWrapper = styled.div`
       left: 1rem;
     }
   `}
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.mobile}) {
+      top: 0.7rem;
+      left: 0.5rem;
+    }
+  `}
 `;
 
 export const Logo = styled.img`
-  /* TODO: Change size for responsive design */
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoints.tablet}) {
+      width: 24px;
+      height: 24px;
+    }
+  `}
 `;
 
 export const HeroHeading = styled.h1`
@@ -64,6 +76,11 @@ export const HeroHeading = styled.h1`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 2.25rem;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 1.75rem;
+    padding-top: 1.75rem;
+  }
 `;
 
 export const HeroSubheading = styled.p`
@@ -74,6 +91,12 @@ export const HeroSubheading = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     font-size: 1rem;
+    width: 450px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 0.8rem;
+    width: 170px;
   }
 `;
 
