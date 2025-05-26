@@ -42,13 +42,13 @@ export const SubHeading = styled.h2`
   justify-content: center;
   font-size: 2.5rem;
   padding-top: 4.375rem;
+  color: #0b3b3c;
 `;
 
 export const TextContent = styled.div`
   position: relative;
   max-width: 400px;
 `;
-
 
 export const NumberOverlay = styled.span<{ $left?: string }>`
   position: absolute;
@@ -77,7 +77,7 @@ export const Label = styled.span`
   font-size: 0.625rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #09393199;
+  color: #6d8a83;
 `;
 
 export const Heading = styled.h2`
@@ -89,6 +89,6 @@ export const Heading = styled.h2`
 
 export const BodyCopy = styled.p`
   font-size: 0.875rem;
-  color: #093931cc;
+  color: #0b3b3c;
   line-height: 1.6;
 `;
