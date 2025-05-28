@@ -19,6 +19,7 @@ A multi-step hair loss treatment quiz for Manual, built with React and TypeScrip
 ### Prerequisites
 
 - Node.js 20+
+- Clone the repo
 
 ### Install
 
