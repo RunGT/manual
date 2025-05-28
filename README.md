@@ -1,4 +1,4 @@
-# Manual Quiz Case Study by Glenroy-Terence Abdullah
+# Manual Quiz Case Study by Glenroy-Terence
 
 A multi-step hair loss treatment quiz for Manual, built with React and TypeScript using Next.js. The quiz is designed to guide users through a medical questionnaire with a clean, responsive UI and tailored results.
 
